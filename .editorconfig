@@ -1,0 +1,15 @@
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file and 4 space indent
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# compiled and minified assets
+[*.{html5,svg,min.css,min.js}]
+insert_final_newline = false

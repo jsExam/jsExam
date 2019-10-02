@@ -1,12 +1,11 @@
 {
-  "name": "jsexam",
+  "name": "jsexam-api",
   "version": "1.0.0",
   "description": "jExam enrollment schedules at a glance. A simple static website with Express (Node.JS) backend to display jExam enrollment schedules.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "lint" : "eslint . --ext .js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -24,9 +23,7 @@
     "path": "^0.12.7",
     "querystring": "^0.2.0"
   },
-  "devDependencies": {
-    "eslint": "^6.5.1"
-  },
+  "devDependencies": {},
   "engines": {
     "node": "10.x"
   }
