@@ -39,6 +39,7 @@ To start a local development environment you will have to:
 Then open your browser at `localhost:3000`.
 
 To generate a static build of the application execute `$ yarn run build` OR `$ npm run build`. You will know have a `/dist` folder in the root directory of this repository containing all files. We host these static files on our [Site](https://jsexam.github.io/jsExam/) by simply serving the directory over Github Pages.
+For this purpose we use the `gh-pages` package from npm and run `$ yarn run deploy`.
 
 ## Technologies used
 
