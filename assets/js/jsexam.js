@@ -3,16 +3,15 @@ $(document).ready(function() {
 
     window.stringifyUnixTime = function(unixTimestamp) {
         if (typeof unixTimestamp === "undefined") return "n/a";
-        return new Date(unixTimestamp).toISOString();
+        return moment(unixTimestamp).calendar();
     };
 
     window.handleData = function(data) {
         let container = $("#results-container");
         container.html("");
         for (let row of data.rows) {
-            container.append(
-                `
-                <div class="row">
+            let node = $(`
+                <div class="row" style="display: none">
                     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                         <div class="card card-signin my-2">
                             <div class="card-body">
@@ -23,7 +22,10 @@ $(document).ready(function() {
                                     ${row.currentMembers} of ${row.maxMembers} enrolled
                                 </div>
                                 <div class="hide-on-search">
-                                    Available for enrollment on ${window.stringifyUnixTime(row.freeForEnroll.start)}
+                                    Enrollment opens: ${window.stringifyUnixTime(row.freeForEnroll.start)}
+                                </div>
+                                <div class="hide-on-search">
+                                    Enrollment closes: ${window.stringifyUnixTime(row.freeForEnroll.end)}
                                 </div>
                                 <div class="hide-on-search">
                                     ${row.comment}
@@ -32,8 +34,9 @@ $(document).ready(function() {
                         </div>
                     </div>
                 </div>
-                `
-            )
+            `);
+            container.append(node);
+            node.fadeIn();
         }
     };
 
