@@ -4,10 +4,12 @@
   "description": "jExam enrollment schedules at a glance. A simple static website with Express (Node.JS) backend to display jExam enrollment schedules.",
   "scripts": {
     "postinstall": "cd api && yarn install",
+    "start": "webpack-dev-server --open --hot --mode development",
+    "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint --fix . --ext .js",
-    "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\""
+    "format": "prettier --write \"**/*.+(js|jsx|json|css|scss|md)\""
   },
   "repository": {
     "type": "git",
@@ -19,12 +21,52 @@
     "url": "https://github.com/jsExam/jsExam/issues"
   },
   "homepage": "https://github.com/jsExam/jsExam#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "animejs": "^3.1.0",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.6",
+    "bulma": "^0.7.5",
+    "css-loader": "^3.2.0",
+    "date-fns": "^2.4.1",
+    "eslint-loader": "^3.0.2",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
+  },
   "devDependencies": {
     "eslint": "^6.5.1",
-    "prettier": "^1.18.2",
     "eslint-config-prettier": "^6.3.0",
-    "eslint-plugin-prettier": "^3.1.1"
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.15.1",
+    "husky": "^3.0.8",
+    "install": "^0.13.0",
+    "lint-staged": "^9.4.1",
+    "prettier": "^1.18.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && yarn format"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|jsx)": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.+(json|css|scss|md)": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "browserslist": {
     "production": [

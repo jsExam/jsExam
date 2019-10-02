@@ -1,2 +1,5 @@
 **/node_modules/**
 /dist
+**/*min.css
+**/*min.js
+assets/js/moment.js
