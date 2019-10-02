@@ -1,0 +1,33 @@
+{
+  "name": "jsexam",
+  "version": "1.0.0",
+  "description": "jExam enrollment schedules at a glance. A simple static website with Express (Node.JS) backend to display jExam enrollment schedules.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "lint" : "eslint . --ext .js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsExam/jsExam.git"
+  },
+  "author": "Felix Kästner <hello@felix-kaestner.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jsExam/jsExam/issues"
+  },
+  "homepage": "https://github.com/jsExam/jsExam#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "https": "^1.0.0",
+    "path": "^0.12.7",
+    "querystring": "^0.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1"
+  },
+  "engines": {
+    "node": "10.x"
+  }
+}
