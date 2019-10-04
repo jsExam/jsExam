@@ -18,7 +18,8 @@ module.exports = {
   },
   rules: {
     "no-console": "off",
-    "linebreak-style": ["error", "unix"],
-    quotes: ["error", "double"],
+    "linebreak-style": ["warn", "unix"],
+    quotes: ["warn", "double"],
+    "prettier/prettier": "warn",
   },
 };
