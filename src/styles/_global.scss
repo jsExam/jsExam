@@ -6,21 +6,29 @@
 body {
   background: #007bff;
   background: linear-gradient(to right, #0062e6, #33aeff);
-  overflow: hidden;
 }
 
 #app {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
+  overflow: hidden;
 
-  > .container {
+  & > .container {
     flex: 1;
     flex-direction: column;
     display: flex;
 
-    > .columns {
+    & > .columns {
       flex: 1;
       align-items: center;
+
+      @include mobile {
+        margin-top: 30px;
+      }
+
+      @include tablet-only {
+        margin-top: 15px;
+      }
     }
   }
 }

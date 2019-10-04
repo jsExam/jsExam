@@ -1,3 +1,15 @@
-@import "global";
+@charset "utf-8";
+
+// import our variables first, they include variable overwrites for bulma
+@import "variables";
+
+// import our CSS Framework of choice which is bulma
+@import "~bulma/bulma";
+
+// import our custom styles last
+@import "functions";
+@import "mixins";
+
 @import "spacing";
+@import "global";
 @import "form";
