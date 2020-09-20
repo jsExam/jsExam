@@ -1,4 +1,4 @@
-# jsExam - jExam enrollment schedules at a glance 👀✨🎉🍕
+# jsExam - jExam enrollment schedules at a glance 👀✨
 
 _jsExam offers a way to view more detailled information on jExam enrollment schedules._
 
@@ -20,7 +20,7 @@ Feature Requests are welcome via the [Issues](https://github.com/jsExam/jsExam/i
 
 ## How does it work?
 
-jsExam is a prettified interface to the `getLectures` `ajax` json interface of jExam, which is accessible under `/de.jexam.web.v4.5/spring/lectures/ajax`. To conform to cross origin policies, jsExam tunnels all requests to jExam via an [API](https://github.com/jsExam/jsExam/tree/master/api).
+jsExam is a prettified interface to the `getLectures` `ajax` json interface of jExam, which is accessible under `/de.jexam.web.v5/spring/lectures/ajax`. To conform to cross origin policies, jsExam tunnels all requests to jExam via an [API](https://github.com/jsExam/jsExam/tree/master/api).
 
 ## Concepts
 
