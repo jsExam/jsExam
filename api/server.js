@@ -14,14 +14,14 @@ const httpPostRequest = (options, postData, callback) => {
   let params = qs.stringify(postData);
 
   // Callback function for the POST request
-  let req = https.request(options, res => {
+  let req = https.request(options, (res) => {
     console.log(`statusCode: ${res.statusCode}`);
 
     // initialize a new buffer for our fetched data
     let body = "";
 
     // Listener to receive data, appends new chunks of data to our buffer
-    res.on("data", data => {
+    res.on("data", (data) => {
       body += data;
     });
 
@@ -34,7 +34,7 @@ const httpPostRequest = (options, postData, callback) => {
   });
 
   // Handle any errors occurred while making request
-  req.on("error", error => {
+  req.on("error", (error) => {
     console.error(error);
     callback(500, JSON.parse({ type: "error", message: error.message }));
   });
@@ -69,7 +69,7 @@ app.get("/lectures", (req, res) => {
     method: "POST",
     hostname: "jexam.inf.tu-dresden.de",
     port: null,
-    path: "/de.jexam.web.v4.5/spring/lectures/ajax",
+    path: "/de.jexam.web.v5/spring/lectures/ajax",
     headers: {
       "content-type": "application/x-www-form-urlencoded",
     },
@@ -82,7 +82,7 @@ app.get("/lectures", (req, res) => {
 });
 
 // Simply render our static web page, in the future this can be done by simply hosting the file on Github Pages
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
   res.sendFile(path.resolve("../dist/index.html"));
 });
 

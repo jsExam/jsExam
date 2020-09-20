@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import anime from "animejs/lib/anime.es.js"; // Only include Anime.JS in the components you need it.
 import SearchFormCard from "./components/SearchFormCard";
 import CourseInfoCard from "./components/CourseInfoCard";
-import getCourse from "./helper/CourseHelper";
+import getCourse from "./courses/CourseHelper";
 
 import "./styles/App.scss";
 
@@ -25,7 +25,8 @@ export default class App extends Component {
   }
 
   handleData(data) {
-    const { action, fields, results, rows, success, toID } = data;
+    console.log(data);
+    const { action, fields, results, rows, success, toID, errorMsg } = data;
 
     if (results > 0) {
       var self = this;
@@ -35,7 +36,7 @@ export default class App extends Component {
         easing: "easeInOutSine",
         scale: 0,
         height: 0,
-        complete: function() {
+        complete: function () {
           self.setState({
             loading: false,
             action,
@@ -47,6 +48,10 @@ export default class App extends Component {
           });
         },
       });
+    } else if (results === 0) {
+      alert("Keine Einträge gefunden");
+    } else if (errorMsg) {
+      alert(errorMsg);
     }
 
     let newState = Object.assign({}, this.state);
@@ -61,6 +66,7 @@ export default class App extends Component {
 
     event.preventDefault();
     let courseId = document.getElementById("input-lecture-id").value;
+    console.log(courseId);
     getCourse(courseId).then(this.handleData);
   }
 
