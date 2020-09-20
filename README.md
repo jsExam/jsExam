@@ -1,4 +1,4 @@
-# jsExam - jExam enrollment schedules at a glance 👀
+# jsExam - jExam enrollment schedules at a glance 👀✨🎉🍕
 
 _jsExam offers a way to view more detailled information on jExam enrollment schedules._
 
@@ -15,7 +15,7 @@ Feature Requests are welcome via the [Issues](https://github.com/jsExam/jsExam/i
 
 ## Quickstart
 
-1. Visit [jExam](https://jexam.inf.tu-dresden.de/de.jexam.web.v4.5/spring/welcome) and find out the ID of the desired lecture via a html inspector of your choice.
+1. Visit [jExam](https://jexam.inf.tu-dresden.de/de.jexam.web.v5/spring/welcome) and find out the ID of the desired lecture via a html inspector of your choice.
 2. Copy that ID and paste it to our [App](https://jsexam.github.io/jsExam/). The App searches automatically for that lecture and displays further information.
 
 ## How does it work?
